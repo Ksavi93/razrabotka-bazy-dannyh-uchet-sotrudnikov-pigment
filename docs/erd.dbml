@@ -1,0 +1,29 @@
+Project employee44 {
+  database_type: "SQLite"
+  Note: "Database for employee accounting system"
+}
+
+Table EMPLOYEE {
+  id integer [pk, increment]
+  Name text [not null]
+  Surname text [not null]
+  ThirdName text [not null]
+  Age integer [not null]
+  Sex text [not null]
+  DateAdm text [not null]
+  Position text [not null]
+  Department text [not null]
+  PhoneNumber text [not null]
+  EMail text [not null]
+  Head text [not null]
+  Photo text
+}
+
+Table ARCHIVE {
+  archive_id integer [pk, increment]
+  id integer [not null]
+  prichina text [not null]
+  date text [not null]
+}
+
+Ref: ARCHIVE.id > EMPLOYEE.id
