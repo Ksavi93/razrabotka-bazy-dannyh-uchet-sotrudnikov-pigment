@@ -1,0 +1,29 @@
+PRAGMA foreign_keys = OFF;
+
+CREATE TABLE IF NOT EXISTS EMPLOYEE (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Name TEXT NOT NULL,
+    Surname TEXT NOT NULL,
+    ThirdName TEXT NOT NULL,
+    Age INTEGER NOT NULL,
+    Sex TEXT NOT NULL,
+    DateAdm TEXT NOT NULL,
+    Position TEXT NOT NULL,
+    Department TEXT NOT NULL,
+    PhoneNumber TEXT NOT NULL,
+    EMail TEXT NOT NULL,
+    Head TEXT NOT NULL,
+    Photo TEXT
+);
+
+CREATE TABLE IF NOT EXISTS ARCHIVE (
+    archive_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id INTEGER NOT NULL,
+    prichina TEXT NOT NULL,
+    date TEXT NOT NULL
+);
+
+CREATE INDEX IF NOT EXISTS idx_employee_surname ON EMPLOYEE(Surname);
+CREATE INDEX IF NOT EXISTS idx_employee_department ON EMPLOYEE(Department);
+CREATE INDEX IF NOT EXISTS idx_employee_position ON EMPLOYEE(Position);
+CREATE INDEX IF NOT EXISTS idx_archive_employee_id ON ARCHIVE(id);
